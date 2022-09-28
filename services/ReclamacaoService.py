@@ -22,6 +22,11 @@ class ReclamacaoService:
         self.reclamacaoRepository.commit()
         return usuario
 
+    def findReclamacoesByUsuarioId(self, idUsuario):
+        reclamacoes = self.reclamacaoRepository.findRecalamacoesByUsuarioId(idUsuario)
+        self.reclamacaoRepository.commit()
+        return reclamacoes
+
     def saveUsuario(self, reclamacao, idUsuario):
         self.reclamacaoRepository.saveReclamacao(reclamacao=reclamacao, idUsuario=idUsuario)
         # self.usuarioRepository.closeCursorAndConnection()

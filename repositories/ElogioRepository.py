@@ -29,7 +29,7 @@ class ElogioRepository:
         return self.cursor.fetchall()
 
     def saveElogio(self, elogio, idUsuario):
-        sql = f'INSERT INTO tb_elogio (elogio) VALUES ("{elogio}", "{idUsuario}")'
+        sql = f'INSERT INTO tb_elogio (elogio, usuario_id) VALUES ("{elogio}", {idUsuario})'
         self.cursor.execute(sql)
 
     def deleteElogioById(self, id):
