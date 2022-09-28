@@ -22,6 +22,11 @@ class UsuarioService:
         self.usuarioRepository.commit()
         return usuario
 
+    def findUsuarioByUsuario(self, usuario):
+        usuario = self.usuarioRepository.findUsuarioByUsuario(usuario=usuario)
+        self.usuarioRepository.commit()
+        return usuario
+
     def saveUsuario(self, nome, usuario, senha):
         self.usuarioRepository.saveUsuario(nome=nome, usuario=usuario, senha=senha)
         # self.usuarioRepository.closeCursorAndConnection()

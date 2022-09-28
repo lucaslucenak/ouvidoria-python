@@ -23,6 +23,11 @@ class UsuarioRepository:
         self.cursor.execute(sql)
         return self.cursor.fetchall()
 
+    def findUsuarioByUsuario(self, usuario):
+        sql = f'SELECT * FROM tb_usuario WHERE usuario = "{usuario}"'
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()
+
     def saveUsuario(self, nome, usuario, senha):
         sql = f'INSERT INTO tb_usuario (nome, usuario, senha) VALUES ("{nome}", "{usuario}", "{senha}")'
         self.cursor.execute(sql)
