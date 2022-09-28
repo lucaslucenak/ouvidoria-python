@@ -23,6 +23,11 @@ class ElogioRepository:
         self.cursor.execute(sql)
         return self.cursor.fetchall()
 
+    def findElogiosByUsuarioId(self, idUsuario):
+        sql = f'SELECT * FROM tb_elogio WHERE usuario_id = {idUsuario}'
+        self.cursor.execute(sql)
+        return self.cursor.fetchall()
+
     def saveElogio(self, elogio, idUsuario):
         sql = f'INSERT INTO tb_elogio (elogio) VALUES ("{elogio}", "{idUsuario}")'
         self.cursor.execute(sql)

@@ -22,6 +22,11 @@ class UsuarioService:
         self.elogioRepository.commit()
         return usuario
 
+    def findElogiosByUsuarioId(self, idUsuario):
+        elogios = self.elogioRepository.findElogiosByUsuarioId(idUsuario)
+        self.elogioRepository.commit()
+        return elogios
+
     def saveUsuario(self, elogio, idUsuario):
         self.elogioRepository.saveElogio(elogio=elogio, idUsuario=idUsuario)
         # self.usuarioRepository.closeCursorAndConnection()
