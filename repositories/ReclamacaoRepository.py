@@ -23,8 +23,8 @@ class ReclamacaoRepository:
         self.cursor.execute(sql)
         return self.cursor.fetchall()
 
-    def saveReclamacao(self, reclamacao):
-        sql = f'INSERT INTO tb_reclamacao (reclamacao) VALUES ("{reclamacao}")'
+    def saveReclamacao(self, reclamacao, idUsuario):
+        sql = f'INSERT INTO tb_reclamacao (reclamacao) VALUES ("{reclamacao}", "{idUsuario}")'
         self.cursor.execute(sql)
 
     def deleteReclamacaoById(self, id):

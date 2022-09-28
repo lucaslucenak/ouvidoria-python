@@ -22,8 +22,8 @@ class UsuarioService:
         self.elogioRepository.commit()
         return usuario
 
-    def saveUsuario(self, elogio):
-        self.elogioRepository.saveElogio(elogio=elogio)
+    def saveUsuario(self, elogio, idUsuario):
+        self.elogioRepository.saveElogio(elogio=elogio, idUsuario=idUsuario)
         # self.usuarioRepository.closeCursorAndConnection()
         self.elogioRepository.commit()
 
